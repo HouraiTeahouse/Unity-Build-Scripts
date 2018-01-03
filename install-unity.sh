@@ -1,9 +1,5 @@
 #! /bin/bash
 
-BASE_URL=http://netstorage.unity3d.com/unity
-HASH=a9f86dcd79df
-VERSION=2017.3.0f3
-
 download() {
   url="$BASE_URL/$HASH/$package"
 
@@ -13,10 +9,14 @@ download() {
 
 install() {
   package=$1
+  install_dir="$(pwd)/Unity3D"
   download "$package"
 
-  echo "Installing "`basename "$package"`
-  sudo installer -dumplog -package `basename "$package"` -target /
+  echo "Installing "`basename "$package"`" to $install_dir"
+  chmod +x $package
+  ./$package --unattended --instal-location="$install_dir"
+
+  ls $install_dir
 }
 
-install "MacEditorInstaller/Unity-$VERSION.pkg"
+install "http://beta.unity3d.com/download/3c89f8d277f5/UnitySetup-2017.3.0f1"

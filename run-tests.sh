@@ -25,7 +25,7 @@ test_results=$(pwd)/reports/unit-test-results.xml
 error_code=0
 
 echo "Running unit tests."
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+./Unity3D/Editor/Unity \
   -batchmode \
   -nographics \
   -silent-crashes \

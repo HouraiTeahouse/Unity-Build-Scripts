@@ -1,7 +1,6 @@
-language: objective-c       # forces running on macOS instances
-osx_image: xcode8.3
-rvm:
-  - 2.2
+language: generic
+sudo: false
+dist: trusty
 before_install:
   - git clone https://github.com/HouraiTeahouse/Unity-Build-Scripts.git scripts
   - chmod a+x ./scripts/*.sh

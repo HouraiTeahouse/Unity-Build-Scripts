@@ -6,7 +6,7 @@ log_file=$(pwd)/build/unity-mac.log
 error_code=0
 
 echo "Building project."
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+./Unity3D/Editor/Unity \
   -batchmode \
   -nographics \
   -silent-crashes \
@@ -14,6 +14,7 @@ echo "Building project."
   -projectPath "$project_path" \
   -buildOSXUniversalPlayer "$(pwd)/build/osx/ci-build.app" \
   -quit
+
 if [ $? = 0 ] ; then
   echo "Build completed successfully."
   error_code=0
