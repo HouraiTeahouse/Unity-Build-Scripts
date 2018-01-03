@@ -4,7 +4,7 @@ project_path=$(pwd)/Project
 log_file=$(pwd)/build/unity.log
 
 echo "Project Directory:"
-ls $project_path
+ls $project_path/Assets
 
 error_code=0
 
@@ -17,6 +17,8 @@ echo "Building project."
   -projectPath "$project_path" \
   -buildLinuxUniversalPlayer "$(pwd)/build/ci-build" \
   -quit
+
+ls build
 
 if [ $? = 0 ] ; then
   echo "Build completed successfully."
