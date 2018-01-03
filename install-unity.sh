@@ -14,7 +14,7 @@ install() {
 
   echo "Installing $package to $install_dir"
   chmod +x $package
-  echo y | ./$package --unattjnded --install-location=$install_dir --save-component-list=$component_list
+  echo y | ./$package --unattended --install-location=$install_dir --save-component-list=$component_list
 
   ls $install_dir/Editor
   echo "Component List:"
