@@ -17,6 +17,7 @@ echo "Building project."
   -batchmode \
   -nographics \
   -silent-crashes \
+  -force-free \
   -logFile $log_file \
   -projectPath $project_path \
   -buildLinuxUniversalPlayer $build_name \
