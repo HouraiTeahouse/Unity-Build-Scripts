@@ -1,14 +1,13 @@
 #! /bin/bash
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-SRC_ASSETS_DIR=src
-SRC_TESTS_DIR=test
+SRC_ASSETS_DIR="src"
+SRC_TESTS_DIR="test"
 SRC_PROJECT_SETTINGS_DIR="$SCRIPT_DIR/ProjectSettings"
 
-DST_ASSETS_DIR=./Project/Assets/src
-DST_TEST_DIR=./Project/Assets/test
+DST_ASSETS_DIR="./Project/Assets/src"
+DST_TEST_DIR="./Project/Assets/test"
 DST_PROJECT_SETTINGS_DIR=./Project/ProjectSettings
-TARGET_PROJECT_SETTINGS_DIR
 
 copy() {
   if [ -d $1 ]; then

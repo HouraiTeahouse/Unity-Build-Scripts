@@ -1,7 +1,10 @@
 #! /bin/bash
 
 project_path=$(pwd)/Project
-log_file=$(pwd)/build/unity-mac.log
+log_file=$(pwd)/build/unity.log
+
+echo "Project Directory:"
+ls $project_path
 
 error_code=0
 
@@ -12,7 +15,7 @@ echo "Building project."
   -silent-crashes \
   -logFile "$log_file" \
   -projectPath "$project_path" \
-  -buildOSXUniversalPlayer "$(pwd)/build/osx/ci-build.app" \
+  -buildLinuxUniversalPlayer "$(pwd)/build/ci-build" \
   -quit
 
 if [ $? = 0 ] ; then

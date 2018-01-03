@@ -19,7 +19,7 @@
 
 project=$1
 project_path=$(pwd)/Project
-log_file=$(pwd)/build/unity-mac.log
+log_file=$(pwd)/build/unity-test.log
 test_results=$(pwd)/reports/unit-test-results.xml
 
 error_code=0
