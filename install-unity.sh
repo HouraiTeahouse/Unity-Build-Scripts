@@ -17,12 +17,7 @@ install() {
   echo y | ./$package \
     --unattended \
     --components='Unity' \
-    --install-location=$install_dir \
-    --save-component-list=$component_list \
-
-  ls $install_dir/Editor
-  echo "Component List:"
-  cat $component_list
+    --install-location=$install_dir
 }
 
 install "http://beta.unity3d.com/download/3c89f8d277f5/UnitySetup-2017.3.0f1"

@@ -1,7 +1,11 @@
 #! /bin/bash
 
+build_dir=$(pwd)/build
+build_name=$build_dir/ci-build
 project_path=$(pwd)/Project
-log_file=$(pwd)/build/unity.log
+log_file=$build_dir/unity.log
+
+mkdir -p $build_dir
 
 echo "Project Directory:"
 ls $project_path/Assets
@@ -13,12 +17,10 @@ echo "Building project."
   -batchmode \
   -nographics \
   -silent-crashes \
-  -logFile "$log_file" \
-  -projectPath "$project_path" \
-  -buildLinuxUniversalPlayer "$(pwd)/build/ci-build" \
+  -logFile $log_file \
+  -projectPath $project_path \
+  -buildLinuxUniversalPlayer $build_name \
   -quit
-
-ls build
 
 if [ $? = 0 ] ; then
   echo "Build completed successfully."
