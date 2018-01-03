@@ -13,7 +13,7 @@ install() {
 
   echo "Installing $package to $install_dir"
   chmod +x $package
-  ./$package --unattended --install-location="$install_dir" --list-components
+  ./$package --unattended --install-location="$install_dir"
 
   ls $install_dir
 }
