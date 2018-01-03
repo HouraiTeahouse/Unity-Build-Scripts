@@ -1,8 +1,8 @@
 #! /bin/bash
 
 BASE_URL=http://netstorage.unity3d.com/unity
-HASH=649f48bbbf0f
-VERSION=2017.3.0f1
+HASH=a9f86dcd79df
+VERSION=MacEditorInstaller/Unity-2017.3.0f3.pkg
 
 download() {
   url="$BASE_URL/$HASH/$package"
