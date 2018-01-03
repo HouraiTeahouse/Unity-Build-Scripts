@@ -1,18 +1,17 @@
 #! /bin/bash
 
 download() {
-  url="$BASE_URL/$HASH/$package"
-
   echo "Downloading from $url: "
-  curl -o `basename "$package"` "$url"
+  curl -o $package "$url"
 }
 
 install() {
-  package=$1
+  url=$1
+  package=`basename $url`
   install_dir="$(pwd)/Unity3D"
-  download "$package"
+  download
 
-  echo "Installing "`basename "$package"`" to $install_dir"
+  echo "Installing $package to $install_dir"
   chmod +x $package
   ./$package --unattended --instal-location="$install_dir"
 
