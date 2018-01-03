@@ -1,0 +1,14 @@
+language: objective-c       # forces running on macOS instances
+osx_image: xcode8.2
+rvm:
+  - 2.2
+before_install:
+  - git clone https://github.com/HouraiTeahouse/Unity-Build-Scripts.git scripts
+  - chmod a+x ./scripts/*.sh
+install:
+  - travis_retry ./scripts/install-unity.sh
+  - ./scripts/restructure-project.sh
+script:
+  - ./scripts/build.sh && ./scripts/run-tests.sh
+after_success:
+  - ./scripts/notify-discord.sh
