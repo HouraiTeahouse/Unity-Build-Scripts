@@ -1,7 +1,8 @@
 language: generic
-sudo: false
+sudo: true
 dist: trusty
 before_install:
+  - sudo apt-get install libsoup libarchive libpng
   - git clone https://github.com/HouraiTeahouse/Unity-Build-Scripts.git scripts
   - chmod a+x ./scripts/*.sh
 install:
